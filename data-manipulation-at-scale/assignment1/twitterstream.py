@@ -3,10 +3,10 @@ import urllib2 as urllib
 
 # See assignment1.html instructions or README for how to get these credentials
 
-api_key = "<Enter api key>"
-api_secret = "<Enter api secret>"
-access_token_key = "<Enter your access token key here>"
-access_token_secret = "<Enter your access token secret here>"
+api_key = "jSlQ0GvbL0K4BmrrF2ceqwpYB"
+api_secret = "eQISHsQoLnVVLGew77avrdkQrgPXuHbXTKXQtwH8cWHmhvKF2j"
+access_token_key = "2844058798-50Vvb1uiMqMyy6Gd4eXllHaqxE2cStD66urIGIr"
+access_token_secret = "rSEwnjYsYJXg7i9S8enKqgODeMVfIkfSqbxxO3RY7xFKT"
 
 _debug = 0
 
@@ -27,10 +27,10 @@ using the hard-coded credentials above.
 '''
 def twitterreq(url, method, parameters):
   req = oauth.Request.from_consumer_and_token(oauth_consumer,
-                                             token=oauth_token,
-                                             http_method=http_method,
-                                             http_url=url, 
-                                             parameters=parameters)
+                                              token=oauth_token,
+                                              http_method=http_method,
+                                              http_url=url,
+                                              parameters=parameters)
 
   req.sign_request(signature_method_hmac_sha1, oauth_consumer, oauth_token)
 
@@ -51,7 +51,7 @@ def twitterreq(url, method, parameters):
   return response
 
 def fetchsamples():
-  url = "https://stream.twitter.com/1/statuses/sample.json"
+  url = "https://api.twitter.com/1.1/search/tweets.json?q=microsoft"
   parameters = []
   response = twitterreq(url, "GET", parameters)
   for line in response:
