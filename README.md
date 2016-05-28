@@ -1,4 +1,4 @@
-# courses
+# Courses
 course's assignments
 
 #### data-manipulation-at-scale
