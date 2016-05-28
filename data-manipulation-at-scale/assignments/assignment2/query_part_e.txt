@@ -1,0 +1,6 @@
+create view part_e as 
+	select docid from Frequency
+	group by docid
+	having count(count)>300;
+
+select count(docid) from part_e;
