@@ -1,6 +1,0 @@
-select count(w.docid) 
-	from       (select docid from Frequency
-		            where term = 'transactions') as t
-	inner join (select docid from Frequency
-					 where term = 'world') as w
-	on t.docid = w.docid;

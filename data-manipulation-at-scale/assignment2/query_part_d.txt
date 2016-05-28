@@ -1,5 +1,0 @@
-create view part_d as
-	select docid from Frequency
-	where term = 'law' or term = 'legal';
-
-select count(distinct docid) from part_d;
